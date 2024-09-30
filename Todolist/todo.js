@@ -1,16 +1,34 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    // Define the URL to our PHP API.
-    const apiUrl = "todo-http://172.30.148.126/Todolist/todo.phpapi.php";
+    // Corrected the URL.
+    const apiUrl = "http://172.30.148.126/Todolist/todo.php";
 
     fetch(apiUrl)
     .then(response => response.json())
     .then(data => {
-        const todoList = document.getElementById('http://172.30.148.126/Todolist/main.html');
+        const todoList = document.getElementById('todo-list');
         data.forEach(item => {
             const li = document.createElement('li');
             li.textContent = item.title;
             todoList.appendChild(li);
+        });
+    });
+    document.getElementById('todo-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const todoInput = document.getElementById('todo-input').value;
+        fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+        'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ title: todoInput })
+        })
+        .then(response => response.json())
+        .then(data => {
+        const todoList = document.getElementById('todo-list');
+        const li = document.createElement('li');
+        li.textContent = data.title;
+        todoList.appendChild(li);
         });
     });
 });
