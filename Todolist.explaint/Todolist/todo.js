@@ -40,4 +40,21 @@ document.addEventListener("DOMContentLoaded", function() {
             todoList.appendChild(li); // Fügt das neue Element zur Liste auf der Seite hinzu.
         });
     });
+    document.getElementById('todo-form')
+    cons deleteButton = document.createElement('Button');
+    delete Button.textContent
+
+    //handle delete button click
+    delete Button.addEventListener('click', function(evt){
+        console.log(evt);
+        console.log('delete ${item.title} from list.);
+            fetch (apiUrl, {
+                Method: 'DELETE',
+                headers:{
+                    'Content'
+                //    location.reload();
+                //    loaditems();
+                }
+            })
+    }
 });

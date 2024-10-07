@@ -68,6 +68,14 @@ switch ($_SERVER["REQUEST_METHOD"]) {
     case "DELETE":
         // Platzhalter für DELETE-Anfragen, die zum Löschen eines TODOs verwendet werden.
         write_log("DELETE", null); // Protokolliert einfach die DELETE-Anfrage (noch nicht implementiert).
+        //remove todo (delete)
+        //get the date from php input stream
+        $data =json_decode(file_get_contents('php://Input'); true);
+        //Filter
+        $todo_items = array_filter($todo_items; function($todo) use ($data)){
+            return $todo ['id'] !== $data['id'];
+        });
+        file
         break;
 }
 

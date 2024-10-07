@@ -1,0 +1,26 @@
+/* External styles */
+p,
+div {
+    color: rgb(111, 27, 180);
+}
+
+span.blaueSchrift {
+    color: blue;
+}
+
+.bold {
+    font-weight:bold
+}
+
+.schraeg {
+    font-style: italic;
+}
+
+.completed {
+    text-decoration: line-through;
+}
+
+/* Styles for element with id firstParagraph */
+#firstParagraph {
+    border: 5px solid yellowgreen;
+}
