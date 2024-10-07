@@ -1,26 +1,81 @@
 /* External styles */
-p,
-div {
-    color: rgb(111, 27, 180);
+html {
+    font-size: 14px;
 }
 
-span.blaueSchrift {
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #666;
+    background-color: lightgrey;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+#img-dino {
+    width: 200px;
+}
+
+.big-video {
+    border-radius: 80%;
+}
+
+.blue-box {
+    background-color: blue;
+    border-radius: 25% 10%;
+    width: 90vw;
+    height: 50vh;
+    color: white;
+    padding: 20px;
+}
+
+span .blaueSchrift {
     color: blue;
+    font-size: 2rem;
 }
 
 .bold {
-    font-weight:bold
+    font-weight:bold;
 }
 
 .schraeg {
     font-style: italic;
 }
 
+a:hover,
+h1:hover {
+    text-decoration: overline;
+    color: grey;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+input[type="text"] {
+    border: 1px solid red;
+}
+
+input:focus {
+    border: 5px solid green;
+}
+
+.todo-list {
+    border: 1px solid black;
+}
+.todo-element {
+    width: 300px;
+    height: 100px;
+    font-size: 2em;
+    font-weight: bold;
+    text-decoration: underline;
+    border: 1px solid green;
+    text-align: center;
+}
 .completed {
     text-decoration: line-through;
 }
 
 /* Styles for element with id firstParagraph */
-#firstParagraph {
+p#firstParagraph {
     border: 5px solid yellowgreen;
 }
