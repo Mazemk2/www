@@ -32,3 +32,11 @@ $kundenData = fetchTableData($db, 'Kunden');
 
 // Verbindung schließen
 $db->close();
+
+try {
+    $db = new SQLite3('sharehop.db');
+} catch (Exception $e) {
+    echo "Verbindung zur Datenbank fehlgeschlagen: " . $e->getMessage();
+}
+
+?>
