@@ -1,6 +1,6 @@
 <?php
 // Verbindung zur SQLite-Datenbank herstellen
-$db = new SQLite3('http://172.30.148.126/Databank.001/sharehop.db');
+$db = new SQLite3('/srv/www/Databank.001/sharehop.db');
 
 // Funktion, um die Daten einer Tabelle zu laden
 function fetchTableData($db, $tableName) {

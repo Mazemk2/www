@@ -36,13 +36,13 @@
     <table>
         <thead>
             <tr>
-                <?php foreach ($mitarbeiter['columns'] as $column): ?>
+                <?php foreach ($mitarbeiterData['columns'] as $column): ?>
                     <th><?php echo htmlspecialchars($column); ?></th>
                 <?php endforeach; ?>
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($mitarbeiter['rows'] as $row): ?>
+            <?php foreach ($mitarbeiterData['rows'] as $row): ?>
                 <tr>
                     <?php foreach ($mitarbeiter['columns'] as $column): ?>
                         <td><?php echo htmlspecialchars($row[$column]); ?></td>
