@@ -1,78 +1,35 @@
 <?php
+require_once 'TodoDB.php';
 
-require_once("./classes/TodoDB.php");
-
-header("Content-Type: application/json");
-
-// LOG function in PHP
-function write_log($action, $data) {
-    $log = fopen('log.txt', 'a');
-    $timestamp = date('Y-m-d H:i:s');
-    fwrite($log, "$timestamp - $action: " . json_encode($data) . "\n");
-    fclose($log);
-}
-
-/**
- * Todo database object.
- */
+// Eine neue Instanz der TodoDB-Klasse erstellen.
 $todoDB = new TodoDB();
 
-switch ($_SERVER["REQUEST_METHOD"]) {
-    case "GET":
-        // Get Todo's (READ)
-        $todo_items = $todoDB->getTodos();
-        echo json_encode($todo_items);
-        write_log("READ", $todo_items);
-        break;
-    case "POST":
-        // Get data from the input stream.
-        $input = file_get_contents('php://input');
+// Header setzen, um JSON als Antwortformat zu definieren.
+header('Content-Type: application/json');
 
-        // Decode JSON input data into PHP array.
-        $data = json_decode($input, true);
+// Die HTTP-Methode herausfinden (GET, POST, PUT, DELETE).
+$method = $_SERVER['REQUEST_METHOD'];
 
-        $result = $todoDB->createTodo($data['text']);
-
-        // Tell the client the success of the operation.
-        echo json_encode(['status' => 'success']);
-
-        write_log("CREATE", $data);
-        break;
-    case "PUT":
-        // Change Todo (UPDATE)
-
-        // Get data from the input stream.
-        $input = file_get_contents('php://input');
-
-        // Decode JSON input data into PHP array.
-        $data = json_decode($input, true);
-
-        $result = $todoDB->updateTodo($data['id']);
-
-        // Tell the client the success of the operation.
-        echo json_encode(['status' => 'success']);
-
-        write_log("PUT", $data);
-        break;
-    case "DELETE":
-        // Remove Todo (DELETE)
-
-        // Get the data from the php input stream.
-        $data = json_decode(file_get_contents('php://input'), true);
-
-        $result = $todoDB->deleteTodo($data['id']);
-
-        if ($result === true) {
-            // Tell the client the success of the operation.
-            echo json_encode(['status' => 'success']);
-            write_log("DELETE", $data);
-        } else {
-            // or the failure
-            echo json_encode(['status' => 'failure']);
-            write_log("DELETE FAILED", $data);
-        }
-        break;
+if ($method === 'GET') {
+    // Wenn die Methode GET ist, alle Todos als JSON zurückgeben.
+    echo json_encode($todoDB->getTodos());
+} elseif ($method === 'POST') {
+    // Wenn die Methode POST ist, ein neues Todo erstellen.
+    $data = json_decode(file_get_contents('php://input'), true);
+    $text = $data['text'] ?? '';
+    $result = $todoDB->createTodo($text);
+    echo json_encode(['success' => $result]);
+} elseif ($method === 'PUT') {
+    // Wenn die Methode PUT ist, den Status eines Todos aktualisieren.
+    $data = json_decode(file_get_contents('php://input'), true);
+    $id = $data['id'] ?? 0;
+    $result = $todoDB->updateTodoStatus($id);
+    echo json_encode(['success' => $result]);
+} elseif ($method === 'DELETE') {
+    // Wenn die Methode DELETE ist, ein Todo löschen.
+    $data = json_decode(file_get_contents('php://input'), true);
+    $id = $data['id'] ?? 0;
+    $result = $todoDB->deleteTodo($id);
+    echo json_encode(['success' => $result]);
 }
-
 ?>
-
