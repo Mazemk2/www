@@ -17,6 +17,7 @@ switch ($_SERVER["REQUEST_METHOD"]) {
         echo json_encode($todo_items);
         write_log("READ", $todo_items);
         break;
+        
     case "POST":
         // Get data from the input stream.
         $input = file_get_contents('php://input');
@@ -26,11 +27,18 @@ switch ($_SERVER["REQUEST_METHOD"]) {
 
         $result = $todoDB->createTodo($data['text']);
 
-        // Tell the client the success of the operation.
-        echo json_encode(['status' => 'success']);
-
-        write_log("CREATE", $data);
+        // Fehlerbehandlung für CREATE
+        if ($result === true) {
+            // Erfolg
+            echo json_encode(['status' => 'success']);
+            write_log("CREATE", $data);
+        } else {
+            // Misserfolg
+            echo json_encode(['status' => 'failure']);
+            write_log("CREATE FAILED", $data);
+        }
         break;
+
     case "PUT":
         // Change Todo (UPDATE)
 
@@ -42,11 +50,18 @@ switch ($_SERVER["REQUEST_METHOD"]) {
 
         $result = $todoDB->updateTodo($data['id']);
 
-        // Tell the client the success of the operation.
-        echo json_encode(['status' => 'success']);
-
-        write_log("PUT", $data);
+        // Fehlerbehandlung für UPDATE
+        if ($result === true) {
+            // Erfolg
+            echo json_encode(['status' => 'success']);
+            write_log("UPDATE", $data);
+        } else {
+            // Misserfolg
+            echo json_encode(['status' => 'failure']);
+            write_log("UPDATE FAILED", $data);
+        }
         break;
+
     case "DELETE":
         // Remove Todo (DELETE)
 
@@ -56,11 +71,11 @@ switch ($_SERVER["REQUEST_METHOD"]) {
         $result = $todoDB->deleteTodo($data['id']);
 
         if ($result === true) {
-            // Tell the client the success of the operation.
+            // Erfolg
             echo json_encode(['status' => 'success']);
             write_log("DELETE", $data);
         } else {
-            // or the failure
+            // Misserfolg
             echo json_encode(['status' => 'failure']);
             write_log("DELETE FAILED", $data);
         }

@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
 
                 const deleteButton = document.createElement('button');
+                deleteButton.className = 'btn btn-danger';
                 deleteButton.textContent = 'Löschen';
 
                 // Handle delete button click
@@ -37,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 li.appendChild(deleteButton);
 
                 const completeButton = document.createElement('button');
+                completeButton.className = 'btn btn-success';
                 completeButton.textContent = 'Erledigt';
 
                 // Handle complete button click

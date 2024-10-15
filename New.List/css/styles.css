@@ -1,0 +1,19 @@
+h1 {
+    color: green;
+}
+
+.btn-primary {
+    background-color: blueviolet;
+}
+
+.row div {
+    border: 1px solid #000;
+}
+
+.completed {
+    text-decoration: line-through;
+}
+
+.navbar-nav .nav-link.active {
+    color: red;
+}
