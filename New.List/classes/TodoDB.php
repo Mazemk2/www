@@ -2,14 +2,13 @@
 
 require_once('./config.php');
 
-
 /**
- * Database handling for the todos in the FI35 demo project.
+ * Database handling for the todos in the FI35 demo project using SQLite.
  *
  * All database functionality is defined here.
  *
  * @author  US-FI36 <post@fi36-coding.com>
- * @property object $connection PDO connection to the MariaDB
+ * @property object $connection PDO connection to SQLite
  * @property object $stmt Database statement handler object.
  */
 class TodoDB {
@@ -20,25 +19,22 @@ class TodoDB {
      * Constructor of the TodoDB class.
      */
     public function __construct() {
-        global $host, $db, $user, $pass;
         try {
-            $this->connection = new PDO(
-                "mysql:host=$host;dbname=$db;",
-                $user,
-                $pass
-            );
+            // SQLite connection (Pfad zur SQLite-Datenbank)
+            $this->connection = new PDO("sqlite:/path/to/todo.db");
             $this->connection->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+            $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (Exception $e) {
             error_log($e->getMessage());
         }
     }
 
     /**
-     * Prepare and execute the given sql statement.
+     * Prepare and execute the given SQL statement.
      *
-     * @param string $sql The sql statement.
+     * @param string $sql The SQL statement.
      * @param array $params An array of the needed parameters.
-     * @return object $stmt The excecuted statement.
+     * @return object $stmt The executed statement.
      */
     private function prepareExecuteStatement($sql, $params = []) {
         try {
@@ -57,7 +53,7 @@ class TodoDB {
      * @return array $todo_items Liste von Todoeinträgen
      */
     public function getTodos() {
-        $statement = $this->connection->query("SELECT id, text, completed from todos");
+        $statement = $this->connection->query("SELECT id, text, completed FROM todos");
         $todo_items = $statement->fetchAll();
         return $todo_items;
     }
@@ -74,8 +70,7 @@ class TodoDB {
             "INSERT INTO todos (text, completed) VALUES (:text, :completed)");
 
         // Execute the insertion.
-        $result = $insert_statement->execute(['text' => $text,
-                                              'completed' => 0]);
+        $result = $insert_statement->execute(['text' => $text, 'completed' => 0]);
         return $result;
     }
 
@@ -86,10 +81,10 @@ class TodoDB {
      * @return boolean $result Erfolg der DB Operation
      */
     public function updateTodo($id) {
-        // Prepare the insert statement.
-        $complete_statement = $this->connection->prepare("UPDATE todos SET completed=NOT completed WHERE id= :myid");
+        // Prepare the update statement.
+        $complete_statement = $this->connection->prepare("UPDATE todos SET completed=NOT completed WHERE id=:myid");
 
-        // Execute the deletion.
+        // Execute the update.
         $result = $complete_statement->execute(["myid" => $id]);
 
         return $result;
@@ -102,7 +97,7 @@ class TodoDB {
      * @return boolean $result Erfolg der DB Operation
      */
     public function deleteTodo($id) {
-        // Prepare the insert statement.
+        // Prepare the delete statement.
         $delete_statement = $this->connection->prepare("DELETE FROM todos WHERE id=:myid");
 
         // Execute the deletion.
@@ -110,7 +105,6 @@ class TodoDB {
 
         return $result;
     }
-
 }
 
 ?>
