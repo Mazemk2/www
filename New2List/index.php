@@ -23,7 +23,7 @@ ini_set('display_errors', 1);
             echo $template->render('nav.php', ['brandTitle' => 'TODO\'s']);
         ?>
         <div class="row">
-            <div class="col-2"><a href: "./todo.py">Column 1 (2 Spalten)</a></div>
+            <div class="col-2"><a href="./todo.py">Column 1 (2 Spalten)</a></div>
             <div class="col-8">Column 2 (8 Spalten)
                 <h1>Meine TODO-Liste</h1>
                 <form id="todo-form">
