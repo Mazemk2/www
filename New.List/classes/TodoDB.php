@@ -21,7 +21,7 @@ class TodoDB {
     public function __construct() {
         try {
             // SQLite connection (Pfad zur SQLite-Datenbank)
-            $this->connection = new PDO("sqlite:/path/to/todo.db");
+            $this->connection = new PDO("sqlite:/todo.db");
             $this->connection->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
             $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (Exception $e) {
