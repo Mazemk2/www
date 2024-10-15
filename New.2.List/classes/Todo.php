@@ -44,3 +44,4 @@ class TodoDB
         return $stmt->execute([':id' => $id]);
     }
 }
+?>

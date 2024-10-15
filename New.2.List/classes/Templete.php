@@ -33,3 +33,4 @@ class Template
         return $this->parameters[$key] ?? null;
     }
 }
+?>
