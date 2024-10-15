@@ -1,7 +1,7 @@
 import sqlite3
 
 # Verbindung zur SQLite-Datenbank (wird erstellt, wenn sie nicht existiert)
-conn = sqlite3.connect('todos.db')
+conn = sqlite3.connect('todo.db')
 c = conn.cursor()
 
 # Tabelle erstellen, falls sie nicht existiert
