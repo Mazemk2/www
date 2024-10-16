@@ -15,7 +15,7 @@ class TodoDB
     {
         $this->db->exec("CREATE TABLE IF NOT EXISTS todos (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            text TEXT NOT NULL,
+            task TEXT NOT NULL,
             completed BOOLEAN NOT NULL DEFAULT 0
         )");
     }
@@ -28,7 +28,7 @@ class TodoDB
 
     public function createTodo($text)
     {
-        $stmt = $this->db->prepare("INSERT INTO todos (text) VALUES (:text)");
+        $stmt = $this->db->prepare("INSERT INTO todos (task) VALUES (:text)");
         return $stmt->execute([':text' => $text]);
     }
 

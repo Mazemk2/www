@@ -4,7 +4,7 @@ try {
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $db->exec("CREATE TABLE IF NOT EXISTS todos (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        text TEXT NOT NULL,
+        task TEXT NOT NULL,
         completed INTEGER DEFAULT 0
     )");
     echo "Datenbank und Tabelle erstellt oder existieren bereits.";

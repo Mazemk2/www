@@ -17,7 +17,7 @@ switch ($_SERVER["REQUEST_METHOD"]) {
     case "POST":
         $input = file_get_contents('php://input');
         $data = json_decode($input, true);
-        $result = $todoDB->createTodo($data['text']);
+        $result = $todoDB->createTodo($data['task']);
 
         if ($result === true) {
             echo json_encode(['status' => 'success']);
