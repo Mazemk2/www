@@ -26,10 +26,10 @@ class TodoDB
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function createTodo($text)
+    public function createTodo($task)
     {
         $stmt = $this->db->prepare("INSERT INTO todos (task) VALUES (:text)");
-        return $stmt->execute([':text' => $text]);
+        return $stmt->execute([':text' => $task]);
     }
 
     public function updateTodo($id)
