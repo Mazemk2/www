@@ -104,3 +104,22 @@
 2024-10-16 18:42:23 - READ: [{"id":1,"task":"Eine Liste Erstellen","completed":1},{"id":2,"task":"F\u00fcge einen Punkt hinzu","completed":1},{"id":5,"task":"Markiere erledigte Objekte als Erledigt","completed":1},{"id":7,"task":"L\u00f6sche ein Objekt (2)","completed":1}]
 2024-10-16 18:42:29 - UPDATE: {"id":7,"completed":true}
 2024-10-16 18:49:18 - READ: [{"id":1,"task":"Eine Liste Erstellen","completed":1},{"id":2,"task":"F\u00fcge einen Punkt hinzu","completed":1},{"id":5,"task":"Markiere erledigte Objekte als Erledigt","completed":1},{"id":7,"task":"L\u00f6sche ein Objekt (2)","completed":0}]
+2024-10-16 18:59:03 - READ: [{"id":1,"task":"Eine Liste Erstellen","completed":1},{"id":2,"task":"F\u00fcge einen Punkt hinzu","completed":1},{"id":5,"task":"Markiere erledigte Objekte als Erledigt","completed":1},{"id":7,"task":"L\u00f6sche ein Objekt (2)","completed":0}]
+2024-10-16 19:00:15 - UPDATE: {"id":7,"completed":true}
+2024-10-16 19:00:17 - UPDATE: {"id":7,"completed":true}
+2024-10-16 19:00:22 - UPDATE: {"id":7,"completed":true}
+2024-10-16 19:00:24 - UPDATE: {"id":7,"completed":true}
+2024-10-16 19:00:28 - UPDATE: {"id":5,"completed":true}
+2024-10-16 19:00:29 - UPDATE: {"id":2,"completed":true}
+2024-10-16 19:00:30 - UPDATE: {"id":1,"completed":true}
+2024-10-16 19:00:31 - UPDATE: {"id":1,"completed":true}
+2024-10-16 19:00:32 - UPDATE: {"id":2,"completed":true}
+2024-10-16 19:00:35 - UPDATE: {"id":5,"completed":true}
+2024-10-16 19:03:14 - CREATE: {"task":"Erstelle eine neu To do Liste"}
+2024-10-16 19:03:14 - READ: [{"id":1,"task":"Eine Liste Erstellen","completed":1},{"id":2,"task":"F\u00fcge einen Punkt hinzu","completed":1},{"id":5,"task":"Markiere erledigte Objekte als Erledigt","completed":1},{"id":7,"task":"L\u00f6sche ein Objekt (2)","completed":0},{"id":8,"task":"Erstelle eine neu To do Liste","completed":0}]
+2024-10-16 19:03:32 - UPDATE: {"id":8,"completed":true}
+2024-10-16 19:03:35 - DELETE: {"id":8,"completed":true}
+2024-10-16 19:03:58 - CREATE: {"task":"whatever"}
+2024-10-16 19:03:58 - READ: [{"id":1,"task":"Eine Liste Erstellen","completed":1},{"id":2,"task":"F\u00fcge einen Punkt hinzu","completed":1},{"id":5,"task":"Markiere erledigte Objekte als Erledigt","completed":1},{"id":7,"task":"L\u00f6sche ein Objekt (2)","completed":0},{"id":9,"task":"whatever","completed":0}]
+2024-10-16 19:04:02 - UPDATE: {"id":9,"completed":true}
+2024-10-16 19:04:03 - DELETE: {"id":9,"completed":true}
