@@ -29,7 +29,7 @@ ini_set('display_errors', 1);
                 <a href="./Part1-Sqlite-Installation.php">Fehlerübersicht und Lösungsvorschläge</a><br>
                 <a href="./Part2-sqlite-DB_Erstellen.php">Sqlite Datenbank erstellen</a><br>
                 <a href="./Part3-Crud-operationen.php">Crud Operationen</a><br>
-                <a href="./Part4-Verbindungueberphp.php">verbindung mit PHP</a><br>
+                <a href="./Part4-Verbindungueberphp.php">Verbindung mit PHP</a><br>
             </div>
             <div class="col-8">
                 <h1>Meine TODO-Liste</h1>
