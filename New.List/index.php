@@ -24,11 +24,11 @@ ini_set('display_errors', 1);
             echo $template->render('nav.php', ['brandTitle' => 'Home']);
         ?>
         <div class="row">
-            <div class="col-2">Column 1 (2 Spalten)</div>
-            <div class="col-8">Column 2 (8 Spalten)
+            <div class="col-2"> </div>
+            <div class="col-8">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus veniam mollitia omnis molestiae tempora! Unde, quidem repudiandae qui impedit placeat mollitia doloribus deleniti praesentium consectetur reiciendis harum quaerat quam molestiae.
             </div>
-            <div class="col-2">Column 3 (2 Spalten)</div>
+            <div class="col-2"> </div>
         </div>
     </div>
     <script src="todo.js"></script>
