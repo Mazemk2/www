@@ -23,7 +23,14 @@ ini_set('display_errors', 1);
             echo $template->render('nav.php', ['brandTitle' => 'TODO\'s']);
         ?>
         <div class="row">
-            <div class="col-2"><a href="./todo.py">The_code</a></div>
+            <div class="col-2">
+                <h5>Navigation</h5>
+                <a href="./Part0-sqlite_linux.php">SQLite-Installation-Linux</a><br>
+                <a href="./Part1-Sqlite-Installation.php">Fehlerübersicht und Lösungsvorschläge</a><br>
+                <a href="./Part2-sqlite-DB_Erstellen.php">Frontend & PHP-API</a><br>
+                <a href="./Part3-Crud-operationen.php">Fehlerübersicht</a><br>
+                <a href="./Part3-Crud-operationen">Fehlerübersicht</a><br>
+            </div>
             <div class="col-8">
                 <h1>Meine TODO-Liste</h1>
                 <form id="todo-form">
