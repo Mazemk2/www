@@ -6,3 +6,79 @@
 2024-10-16 08:22:11 - READ: [{"id":1,"task":"Eine Liste Erstellen","completed":1},{"id":2,"task":"F\u00fcge einen Punkt hinzu","completed":1},{"id":3,"task":"Mariere Erledigte objekte als Erledigt","completed":0}]
 2024-10-16 08:22:50 - READ: [{"id":1,"task":"Eine Liste Erstellen","completed":1},{"id":2,"task":"F\u00fcge einen Punkt hinzu","completed":1},{"id":3,"task":"Mariere Erledigte objekte als Erledigt","completed":0}]
 2024-10-16 08:22:55 - READ: [{"id":1,"task":"Eine Liste Erstellen","completed":1},{"id":2,"task":"F\u00fcge einen Punkt hinzu","completed":1},{"id":3,"task":"Mariere Erledigte objekte als Erledigt","completed":0}]
+2024-10-16 08:24:32 - READ: [{"id":1,"task":"Eine Liste Erstellen","completed":1},{"id":2,"task":"F\u00fcge einen Punkt hinzu","completed":1},{"id":3,"task":"Mariere Erledigte objekte als Erledigt","completed":0}]
+2024-10-16 08:26:31 - READ: [{"id":1,"task":"Eine Liste Erstellen","completed":1},{"id":2,"task":"F\u00fcge einen Punkt hinzu","completed":1},{"id":3,"task":"Mariere Erledigte objekte als Erledigt","completed":0}]
+2024-10-16 08:26:51 - READ: [{"id":1,"task":"Eine Liste Erstellen","completed":1},{"id":2,"task":"F\u00fcge einen Punkt hinzu","completed":1},{"id":3,"task":"Mariere Erledigte objekte als Erledigt","completed":0}]
+2024-10-16 08:40:08 - READ: [{"id":1,"task":"Eine Liste Erstellen","completed":1},{"id":2,"task":"F\u00fcge einen Punkt hinzu","completed":1},{"id":3,"task":"Mariere Erledigte objekte als Erledigt","completed":0}]
+2024-10-16 08:40:59 - READ: [{"id":1,"task":"Eine Liste Erstellen","completed":1},{"id":2,"task":"F\u00fcge einen Punkt hinzu","completed":1},{"id":3,"task":"Mariere Erledigte objekte als Erledigt","completed":0}]
+2024-10-16 08:44:03 - READ: [{"id":1,"task":"Eine Liste Erstellen","completed":1},{"id":2,"task":"F\u00fcge einen Punkt hinzu","completed":1},{"id":3,"task":"Mariere Erledigte objekte als Erledigt","completed":0}]
+2024-10-16 08:45:22 - READ: [{"id":1,"task":"Eine Liste Erstellen","completed":1},{"id":2,"task":"F\u00fcge einen Punkt hinzu","completed":1},{"id":3,"task":"Mariere Erledigte objekte als Erledigt","completed":0}]
+2024-10-16 08:46:48 - READ: [{"id":1,"task":"Eine Liste Erstellen","completed":1},{"id":2,"task":"F\u00fcge einen Punkt hinzu","completed":1},{"id":3,"task":"Mariere Erledigte objekte als Erledigt","completed":0}]
+2024-10-16 08:47:42 - READ: [{"id":1,"task":"Eine Liste Erstellen","completed":1},{"id":2,"task":"F\u00fcge einen Punkt hinzu","completed":1},{"id":3,"task":"Mariere Erledigte objekte als Erledigt","completed":0}]
+2024-10-16 08:49:52 - READ: [{"id":1,"task":"Eine Liste Erstellen","completed":1},{"id":2,"task":"F\u00fcge einen Punkt hinzu","completed":1},{"id":3,"task":"Mariere Erledigte objekte als Erledigt","completed":0}]
+2024-10-16 08:51:09 - READ: [{"id":1,"task":"Eine Liste Erstellen","completed":1},{"id":2,"task":"F\u00fcge einen Punkt hinzu","completed":1},{"id":3,"task":"Mariere Erledigte objekte als Erledigt","completed":0}]
+2024-10-16 08:53:58 - READ: [{"id":1,"task":"Eine Liste Erstellen","completed":1},{"id":2,"task":"F\u00fcge einen Punkt hinzu","completed":1},{"id":3,"task":"Mariere Erledigte objekte als Erledigt","completed":0}]
+2024-10-16 08:56:14 - READ: [{"id":1,"task":"Eine Liste Erstellen","completed":1},{"id":2,"task":"F\u00fcge einen Punkt hinzu","completed":1},{"id":3,"task":"Mariere Erledigte objekte als Erledigt","completed":0}]
+2024-10-16 08:59:19 - READ: [{"id":1,"task":"Eine Liste Erstellen","completed":1},{"id":2,"task":"F\u00fcge einen Punkt hinzu","completed":1},{"id":3,"task":"Mariere Erledigte objekte als Erledigt","completed":0}]
+2024-10-16 08:59:47 - READ: [{"id":1,"task":"Eine Liste Erstellen","completed":1},{"id":2,"task":"F\u00fcge einen Punkt hinzu","completed":1},{"id":3,"task":"Mariere Erledigte objekte als Erledigt","completed":0}]
+2024-10-16 09:01:14 - READ: [{"id":1,"task":"Eine Liste Erstellen","completed":1},{"id":2,"task":"F\u00fcge einen Punkt hinzu","completed":1},{"id":3,"task":"Mariere Erledigte objekte als Erledigt","completed":0}]
+2024-10-16 09:02:47 - READ: [{"id":1,"task":"Eine Liste Erstellen","completed":1},{"id":2,"task":"F\u00fcge einen Punkt hinzu","completed":1},{"id":3,"task":"Mariere Erledigte objekte als Erledigt","completed":1}]
+2024-10-16 09:08:55 - READ: [{"id":1,"task":"Eine Liste Erstellen","completed":1},{"id":2,"task":"F\u00fcge einen Punkt hinzu","completed":1},{"id":3,"task":"Mariere Erledigte objekte als Erledigt","completed":1}]
+2024-10-16 09:11:12 - READ: [{"id":1,"task":"Eine Liste Erstellen","completed":1},{"id":2,"task":"F\u00fcge einen Punkt hinzu","completed":1},{"id":3,"task":"Mariere Erledigte objekte als Erledigt","completed":1}]
+2024-10-16 09:12:45 - READ: [{"id":1,"task":"Eine Liste Erstellen","completed":1},{"id":2,"task":"F\u00fcge einen Punkt hinzu","completed":1},{"id":3,"task":"Mariere Erledigte objekte als Erledigt","completed":1}]
+2024-10-16 09:13:58 - UPDATE: {"id":3}
+2024-10-16 09:14:00 - UPDATE: {"id":3}
+2024-10-16 09:14:00 - UPDATE: {"id":3}
+2024-10-16 09:14:01 - UPDATE: {"id":3}
+2024-10-16 09:14:01 - UPDATE: {"id":3}
+2024-10-16 09:32:33 - READ: [{"id":1,"task":"Eine Liste Erstellen","completed":1},{"id":2,"task":"F\u00fcge einen Punkt hinzu","completed":1},{"id":3,"task":"Mariere Erledigte objekte als Erledigt","completed":0}]
+2024-10-16 09:32:35 - UPDATE: {"id":3,"completed":true}
+2024-10-16 09:32:36 - UPDATE: {"id":3,"completed":true}
+2024-10-16 09:32:37 - CREATE: {"task":"insert"}
+2024-10-16 09:32:37 - READ: [{"id":1,"task":"Eine Liste Erstellen","completed":1},{"id":2,"task":"F\u00fcge einen Punkt hinzu","completed":1},{"id":3,"task":"Mariere Erledigte objekte als Erledigt","completed":0},{"id":4,"task":"insert","completed":0}]
+2024-10-16 09:32:58 - DELETE: {"id":4,"completed":true}
+2024-10-16 09:33:36 - UPDATE: {"id":3,"completed":true}
+2024-10-16 09:55:51 - UPDATE: {"id":3,"completed":true}
+2024-10-16 09:55:52 - UPDATE: {"id":2,"completed":true}
+2024-10-16 09:55:53 - UPDATE: {"id":1,"completed":true}
+2024-10-16 09:55:55 - UPDATE: {"id":1,"completed":true}
+2024-10-16 09:55:56 - UPDATE: {"id":2,"completed":true}
+2024-10-16 09:56:00 - DELETE: {"id":3,"completed":true}
+2024-10-16 09:56:36 - CREATE: {"task":"Markiere erledigte Objekte als Erledigt"}
+2024-10-16 09:56:36 - READ: [{"id":1,"task":"Eine Liste Erstellen","completed":1},{"id":2,"task":"F\u00fcge einen Punkt hinzu","completed":1},{"id":5,"task":"Markiere erledigte Objekte als Erledigt","completed":0}]
+2024-10-16 09:56:53 - UPDATE: {"id":5,"completed":true}
+2024-10-16 09:56:54 - UPDATE: {"id":5,"completed":true}
+2024-10-16 09:56:54 - UPDATE: {"id":5,"completed":true}
+2024-10-16 09:56:55 - UPDATE: {"id":5,"completed":true}
+2024-10-16 09:56:56 - UPDATE: {"id":5,"completed":true}
+2024-10-16 09:56:56 - UPDATE: {"id":5,"completed":true}
+2024-10-16 09:56:56 - UPDATE: {"id":5,"completed":true}
+2024-10-16 09:56:57 - UPDATE: {"id":5,"completed":true}
+2024-10-16 09:56:58 - UPDATE: {"id":5,"completed":true}
+2024-10-16 09:56:58 - UPDATE: {"id":5,"completed":true}
+2024-10-16 09:57:31 - UPDATE: {"id":1,"completed":true}
+2024-10-16 09:57:31 - UPDATE: {"id":2,"completed":true}
+2024-10-16 09:57:37 - UPDATE: {"id":1,"completed":true}
+2024-10-16 09:57:38 - UPDATE: {"id":2,"completed":true}
+2024-10-16 09:59:56 - UPDATE: {"id":5,"completed":true}
+2024-10-16 09:59:57 - UPDATE: {"id":5,"completed":true}
+2024-10-16 09:59:58 - UPDATE: {"id":5,"completed":true}
+2024-10-16 09:59:59 - UPDATE: {"id":5,"completed":true}
+2024-10-16 10:00:00 - UPDATE: {"id":5,"completed":true}
+2024-10-16 10:00:02 - UPDATE: {"id":5,"completed":true}
+2024-10-16 10:00:03 - UPDATE: {"id":5,"completed":true}
+2024-10-16 10:00:05 - UPDATE: {"id":5,"completed":true}
+2024-10-16 10:00:08 - UPDATE: {"id":5,"completed":true}
+2024-10-16 10:00:15 - UPDATE: {"id":5,"completed":true}
+2024-10-16 10:00:58 - CREATE: {"task":"L\u00f6sche ein Objekt"}
+2024-10-16 10:00:58 - READ: [{"id":1,"task":"Eine Liste Erstellen","completed":1},{"id":2,"task":"F\u00fcge einen Punkt hinzu","completed":1},{"id":5,"task":"Markiere erledigte Objekte als Erledigt","completed":0},{"id":6,"task":"L\u00f6sche ein Objekt","completed":0}]
+2024-10-16 10:01:25 - CREATE: {"task":"L\u00f6sche ein Objekt (2)"}
+2024-10-16 10:01:25 - READ: [{"id":1,"task":"Eine Liste Erstellen","completed":1},{"id":2,"task":"F\u00fcge einen Punkt hinzu","completed":1},{"id":5,"task":"Markiere erledigte Objekte als Erledigt","completed":0},{"id":6,"task":"L\u00f6sche ein Objekt","completed":0},{"id":7,"task":"L\u00f6sche ein Objekt (2)","completed":0}]
+2024-10-16 10:01:28 - DELETE: {"id":6,"completed":true}
+2024-10-16 10:01:31 - UPDATE: {"id":5,"completed":true}
+2024-10-16 10:01:32 - UPDATE: {"id":7,"completed":true}
+2024-10-16 10:02:12 - UPDATE: {"id":7,"completed":true}
+2024-10-16 10:02:12 - UPDATE: {"id":7,"completed":true}
+2024-10-16 10:02:28 - READ: [{"id":1,"task":"Eine Liste Erstellen","completed":1},{"id":2,"task":"F\u00fcge einen Punkt hinzu","completed":1},{"id":5,"task":"Markiere erledigte Objekte als Erledigt","completed":1},{"id":7,"task":"L\u00f6sche ein Objekt (2)","completed":1}]
+2024-10-16 16:52:47 - READ: [{"id":1,"task":"Eine Liste Erstellen","completed":1},{"id":2,"task":"F\u00fcge einen Punkt hinzu","completed":1},{"id":5,"task":"Markiere erledigte Objekte als Erledigt","completed":1},{"id":7,"task":"L\u00f6sche ein Objekt (2)","completed":1}]
+2024-10-16 16:52:52 - UPDATE: {"id":7,"completed":true}

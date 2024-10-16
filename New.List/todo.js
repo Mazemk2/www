@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
             todoList.innerHTML = ""; // Clear the current list
             data.forEach(item => {
                 const li = document.createElement('li'); // Create a new list item
-                li.textContent = item.text; // Set the text of the list item
+                li.textContent = item.task; // Set the text of the list item
                 li.id = item.id; // Set the ID of the item
                 if (item.completed) {
                     li.className = "completed"; // Mark as completed if applicable
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function() {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ text: todoInput }) // Send the input value
+            body: JSON.stringify({ task: todoInput }) // Send the input value
         })
         .then(response => {
             if (!response.ok) throw new Error("Fehler beim Hinzufügen der Aufgabe");

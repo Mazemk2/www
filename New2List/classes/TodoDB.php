@@ -6,7 +6,7 @@ class TodoDB
 
     public function __construct()
     {
-        $this->db = new PDO('sqlite:todos.db');
+        $this->db = new PDO('sqlite:/srv/www/New2List/todos.db');
         $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $this->createTable();
     }

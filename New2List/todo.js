@@ -12,7 +12,8 @@ document.addEventListener("DOMContentLoaded", function() {
             todoList.innerHTML = "";
             data.forEach(item => {
                 const li = document.createElement('li');
-                li.textContent = item.text;
+                li.textContent = item.task;
+                console.log(item);
                 li.id = item.id;
                 if (item.completed) {
                     li.className = "completed list-group-item list-group-item-success"; // Markieren als erledigt
@@ -30,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         headers: {
                             'Content-Type': 'application/json'
                         },
-                        body: JSON.stringify({ id: item.id })
+                        body: JSON.stringify({ id: item.id, completed: true })
                     })
                     .then(response => {
                         if (!response.ok) throw new Error("Fehler beim Löschen");
@@ -50,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         headers: {
                             'Content-Type': 'application/json'
                         },
-                        body: JSON.stringify({ id: item.id })
+                        body: JSON.stringify({ id: item.id, completed: true })
                     })
                     .then(response => {
                         if (!response.ok) throw new Error("Fehler beim Aktualisieren");
@@ -81,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function() {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ text: todoInput })
+            body: JSON.stringify({ task: todoInput })
         })
         .then(response => {
             if (!response.ok) throw new Error("Fehler beim Hinzufügen der Aufgabe");
