@@ -25,7 +25,7 @@ switch ($_SERVER["REQUEST_METHOD"]) {
         // Decode JSON input data into PHP array.
         $data = json_decode($input, true);
 
-        $result = $todoDB->createTodo($data['text']);
+        $result = $todoDB->createTodo($data['task']);
 
         // Fehlerbehandlung für CREATE
         if ($result === true) {
