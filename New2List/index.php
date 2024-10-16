@@ -23,8 +23,8 @@ ini_set('display_errors', 1);
             echo $template->render('nav.php', ['brandTitle' => 'TODO\'s']);
         ?>
         <div class="row">
-            <div class="col-2"><a href="./todo.py">Column 1 (2 Spalten)</a></div>
-            <div class="col-8">Column 2 (8 Spalten)
+            <div class="col-2"><a href="./todo.py">The_code</a></div>
+            <div class="col-8">
                 <h1>Meine TODO-Liste</h1>
                 <form id="todo-form">
                     <div class="form-group">
@@ -37,7 +37,7 @@ ini_set('display_errors', 1);
                     <!-- Unordered list to dynamically add todo list items. -->
                 </ul>
             </div>
-            <div class="col-2">Column 3 (2 Spalten)</div>
+            <div class="col-2">may bee</div>
         </div>
     </div>
     
