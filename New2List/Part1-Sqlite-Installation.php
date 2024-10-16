@@ -21,11 +21,7 @@
             <div class="col-2">
                 <h5>Navigation</h5>
                 <a href="./index.php">Zurück zur TODO-Liste</a><br>
-                <a href="./Part0-sqlite_linux.php">SQLite-Installation-Linux</a><br>
-                <a href="./Part1-Sqlite-Installation.php">Fehlerübersicht und Lösungsvorschläge</a><br>
-                <a href="./Part2-sqlite-DB_Erstellen.php">Sqlite Datenbank erstellen</a><br>
-                <a href="./Part3-Crud-operationen.php">Crud Operationen</a><br>
-                <a href="./Part4-Verbindungueberphp.php">Verbindung mit PHP</a><br>
+                
             </div>
             <div class="col-8">
                 <h1>SQLite-Installation und Fallstricke – Erklärungen</h1>
