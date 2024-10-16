@@ -28,8 +28,8 @@ class TodoDB
 
     public function createTodo($task)
     {
-        $stmt = $this->db->prepare("INSERT INTO todos (task) VALUES (:text)");
-        return $stmt->execute([':text' => $task]);
+        $stmt = $this->db->prepare("INSERT INTO todos (task) VALUES (:task)");
+        return $stmt->execute([':task' => $task]);
     }
 
     public function updateTodo($id)
