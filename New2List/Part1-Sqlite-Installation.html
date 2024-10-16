@@ -3,181 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fehlerübersicht, Lösungsvorschläge und SQLite-Installation unter Linux</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        h1 {
-            color: #333;
-        }
-        h2 {
-            color: #555;
-        }
-        code {
-            background-color: #f4f4f4;
-            padding: 5px;
-            display: block;
-            margin: 10px 0;
-        }
-        .solution {
-            background-color: #e8f5e9;
-            border-left: 5px solid #4caf50;
-            padding: 10px;
-        }
-        .warning {
-            background-color: #fff3e0;
-            border-left: 5px solid #ffa726;
-            padding: 10px;
-        }
-    </style>
+    <title>Fehlerübersicht und Lösungsvorschläge</title>
+    <link href="./css/bootstrap.css" rel="stylesheet">
+    <link href="./css/styles.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>Fehlerübersicht, Lösungsvorschläge und SQLite-Installation</h1>
+    <div class="container">
+        <?php
+            require_once(__DIR__ . '/classes/Template.php');
+            $template = new Template(__DIR__ . '/templates', []);
+            echo $template->render('nav.php', ['brandTitle' => 'Fehlerübersicht']);
+        ?>
+        <div class="row">
+            <div class="col-2">
+                <nav>
+                    <ul class="nav flex-column">
+                        <li class="nav-item"><a class="nav-link" href="index.php">Zurück zur TODO-Liste</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-8">
+                <h1>Fehlerübersicht und Lösungsvorschläge</h1>
+                
+                <h2>1. Fehler: Undefined array key "task"</h2>
+                <p><strong>Beschreibung:</strong> Dieser Fehler tritt auf, wenn versucht wird, auf den <code>task</code>-Schlüssel in einem leeren oder unvollständigen Array zuzugreifen.</p>
+                <p><strong>Lösungsvorschlag:</strong> Stelle sicher, dass der Wert korrekt vom Frontend übergeben wird. Vergewissere dich, dass der Schlüssel "task" in der JSON-Datenübertragung vorhanden ist. Du kannst eine Überprüfung hinzufügen, um sicherzustellen, dass alle Felder ausgefüllt sind:</p>
+                <pre><code>
+if (!isset($data['task']) || empty($data['task'])) {
+    echo json_encode(['status' => 'failure', 'message' => 'Task is missing']);
+    exit;
+}
+                </code></pre>
 
-    <!-- SQLite Installation Section -->
-    <h2>SQLite-Installation auf Linux</h2>
-    <p>SQLite ist eine leichtgewichtige, serverlose Datenbank, die ideal für kleinere Projekte wie deine TODO-Liste ist. Befolge die folgenden Schritte, um SQLite unter Linux zu installieren:</p>
+                <h2>2. Fehler: SQLSTATE[23000]: Integrity constraint violation</h2>
+                <p><strong>Beschreibung:</strong> Dieser Fehler tritt auf, wenn versucht wird, eine ungültige oder unvollständige Eingabe in die Datenbank einzufügen, z.B. eine leere <code>task</code>.</p>
+                <p><strong>Lösungsvorschlag:</strong> Prüfe, ob alle benötigten Felder gefüllt sind, bevor sie in die Datenbank eingefügt werden. Füge serverseitige Validierung hinzu, um sicherzustellen, dass der Wert für <code>task</code> nicht leer ist:</p>
+                <pre><code>
+$task = trim($data['task']);
+if (empty($task)) {
+    echo json_encode(['status' => 'failure', 'message' => 'Task cannot be empty']);
+    exit;
+}
+                </code></pre>
 
-    <h3>Schritt 1: Überprüfen, ob SQLite bereits installiert ist</h3>
-    <p>Führe den folgenden Befehl im Terminal aus, um zu überprüfen, ob SQLite auf deinem System installiert ist:</p>
-    <code>sqlite3 --version</code>
-    <p>Wenn SQLite installiert ist, wird die Version angezeigt. Wenn nicht, fahre mit dem nächsten Schritt fort.</p>
-
-    <h3>Schritt 2: Installation von SQLite</h3>
-    <p>Verwende den Paketmanager deines Linux-Systems, um SQLite zu installieren:</p>
-    <ul>
-        <li><strong>Ubuntu/Debian:</strong>
-            <code>sudo apt update && sudo apt install sqlite3</code>
-        </li>
-        <li><strong>Fedora:</strong>
-            <code>sudo dnf install sqlite</code>
-        </li>
-        <li><strong>Arch Linux:</strong>
-            <code>sudo pacman -S sqlite</code>
-        </li>
-    </ul>
-
-    <h3>Schritt 3: Installation des SQLite-PHP-Modules</h3>
-    <p>Um SQLite mit PHP zu verwenden, musst du das SQLite-PHP-Modul installieren:</p>
-    <ul>
-        <li><strong>Ubuntu/Debian:</strong>
-            <code>sudo apt install php-sqlite3</code>
-        </li>
-        <li><strong>Fedora:</strong>
-            <code>sudo dnf install php-sqlite3</code>
-        </li>
-    </ul>
-    <p>Anschließend kannst du den Apache-Server neu starten, damit die Änderungen wirksam werden:</p>
-    <code>sudo systemctl restart apache2</code>
-
-    <!-- Common Pitfalls Section -->
-    <h2>Häufige Fallstricke bei der Nutzung von SQLite</h2>
-
-    <div class="warning">
-        <h3>Fallstrick 1: Schreibrechte für die Datenbank</h3>
-        <p>Ein häufiger Fehler ist, dass die SQLite-Datenbank schreibgeschützt ist, was zu Fehlern wie <code>attempt to write a readonly database</code> führt.</p>
-        <h4>Lösungsvorschlag:</h4>
-        <ul>
-            <li>Überprüfe die Berechtigungen der Datenbankdatei und setze sie korrekt:
-                <code>chmod 775 /pfad/zu/todo.db</code>
-            </li>
-            <li>Stelle sicher, dass der Webserver (z. B. Apache) Schreibzugriff auf die Datenbankdatei hat:
-                <code>sudo chown www-data:www-data /pfad/zu/todo.db</code>
-            </li>
-        </ul>
+                <h2>3. Fehler: Fetch-API Fehlerbehandlung</h2>
+                <p><strong>Beschreibung:</strong> Fehler können auch von der API kommen, wenn z.B. ein ungültiger HTTP-Statuscode zurückgegeben wird. Ein Beispiel könnte das Fehlen von Error-Handling auf der Frontend-Seite sein.</p>
+                <p><strong>Lösungsvorschlag:</strong> Füge Error-Handling in den Fetch-Aufrufen hinzu, um Fehlermeldungen anzuzeigen:</p>
+                <pre><code>
+fetch('api.php', { ... })
+    .then(response => {
+        if (!response.ok) throw new Error('Server Error');
+        return response.json();
+    })
+    .catch(error => alert('Fehler: ' + error.message));
+                </code></pre>
+            </div>
+        </div>
     </div>
-
-    <div class="warning">
-        <h3>Fallstrick 2: Datenbankdatei im falschen Verzeichnis</h3>
-        <p>Manchmal wird die Datenbankdatei in einem Verzeichnis abgelegt, auf das der Webserver keinen Zugriff hat.</p>
-        <h4>Lösungsvorschlag:</h4>
-        <ul>
-            <li>Lege die Datenbankdatei in einem Verzeichnis ab, auf das der Webserver zugreifen kann, wie z. B. <code>/srv/www/</code>.</li>
-            <li>Verwende absolute Pfade in deinem PHP-Code, um die Datei korrekt zu referenzieren.</li>
-        </ul>
-    </div>
-
-    <div class="warning">
-        <h3>Fallstrick 3: Datenbank-Sperren (Locking)</h3>
-        <p>SQLite sperrt die Datenbank, wenn mehrere Schreiboperationen gleichzeitig ausgeführt werden, was zu einer Fehlermeldung führen kann.</p>
-        <h4>Lösungsvorschlag:</h4>
-        <ul>
-            <li>Stelle sicher, dass deine Anwendung nicht versucht, mehrere gleichzeitige Schreibzugriffe auf die Datenbank zu initiieren.</li>
-            <li>Füge Fehlerbehandlung und Retry-Mechanismen hinzu, um mit vorübergehenden Sperren umzugehen.</li>
-        </ul>
-    </div>
-
-    <h2>Fehlerübersicht und Lösungsvorschläge</h2>
-    
-
-    <h2>1. Fehler: fopen(log.txt): Failed to open stream: Permission denied</h2>
-    <p><strong>Beschreibung:</strong> Der Fehler tritt auf, weil PHP keine Berechtigung hat, auf die Datei <code>log.txt</code> zuzugreifen oder sie zu erstellen.</p>
-    
-    <div class="solution">
-        <h3>Lösungsvorschlag:</h3>
-        <ul>
-            <li>Überprüfe die Dateiberechtigungen des Verzeichnisses, in dem sich die <code>log.txt</code>-Datei befindet.</li>
-            <li>Setze die Berechtigungen mit dem Befehl: <code>chmod 775 /srv/www/New2List/</code></li>
-            <li>Stelle sicher, dass der Webserver (z. B. Apache) Schreibrechte in diesem Verzeichnis hat.</li>
-        </ul>
-    </div>
-
-    <h2>2. Fehler: SQLSTATE[HY000]: General error: 1 table todos has no column named text</h2>
-    <p><strong>Beschreibung:</strong> Es wurde versucht, eine Spalte mit dem Namen <code>text</code> zu verwenden, aber diese existiert in der Tabelle <code>todos</code> nicht.</p>
-    
-    <div class="solution">
-        <h3>Lösungsvorschlag:</h3>
-        <ul>
-            <li>Überprüfe die Spaltennamen in der Tabelle <code>todos</code>. Die Spalte sollte <code>task</code> heißen, nicht <code>text</code>.</li>
-            <li>Passe deinen Code entsprechend an:
-                <code>
-                    $result = $todoDB->createTodo($data['task']);
-                </code>
-            </li>
-        </ul>
-    </div>
-
-    <h2>3. Fehler: SQLSTATE[HY000]: General error: 8 attempt to write a readonly database</h2>
-    <p><strong>Beschreibung:</strong> Die SQLite-Datenbank ist schreibgeschützt, daher können keine Änderungen vorgenommen werden.</p>
-    
-    <div class="solution">
-        <h3>Lösungsvorschlag:</h3>
-        <ul>
-            <li>Überprüfe, ob die SQLite-Datenbank beschreibbar ist. Setze die Dateiberechtigungen für die Datenbank mit:
-                <code>chmod 775 todos.db</code>
-            </li>
-            <li>Stelle sicher, dass der Webserver Schreibrechte auf die Datenbankdatei hat.</li>
-        </ul>
-    </div>
-
-    <h2>4. Fehler: Undefined array key "task"</h2>
-    <p><strong>Beschreibung:</strong> Beim Zugriff auf <code>$data['task']</code> gibt es ein Problem, weil der Schlüssel <code>task</code> im empfangenen JSON-Objekt nicht existiert.</p>
-    
-    <div class="solution">
-        <h3>Lösungsvorschlag:</h3>
-        <ul>
-            <li>Stelle sicher, dass im Frontend der richtige Schlüssel gesendet wird. Der Schlüssel sollte <code>task</code> sein, nicht <code>text</code>.</li>
-            <li>Überprüfe, ob der richtige Wert im JavaScript-Teil gesendet wird:
-                <code>
-                    body: JSON.stringify({ task: todoInput })
-                </code>
-            </li>
-        </ul>
-    </div>
-
-    <h2>5. Fehler: Integrity constraint violation: 19 NOT NULL constraint failed: todos.task</h2>
-    <p><strong>Beschreibung:</strong> Es wurde versucht, einen Datensatz ohne den erforderlichen <code>task</code>-Wert in die Datenbank einzufügen.</p>
-    
-    <div class="solution">
-        <h3>Lösungsvorschlag:</h3>
-        <ul>
-            <li>Stelle sicher, dass immer ein Wert für <code>task</code> beim Erstellen einer neuen Aufgabe übergeben wird.</li>
-            <li>Prüfe im Frontend, ob das Eingabefeld nicht leer ist, bevor eine Aufgabe hinzugefügt wird.</li>
-        </ul>
-    </div>
-
-    <!-- Your previous error sections here... -->
 </body>
 </html>
