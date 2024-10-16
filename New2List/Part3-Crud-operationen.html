@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fehlerübersicht, Lösungsvorschläge und SQLite-Installation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        h2 {
+            color: #555;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 5px;
+            display: block;
+            margin: 10px 0;
+        }
+        .solution {
+            background-color: #e8f5e9;
+            border-left: 5px solid #4caf50;
+            padding: 10px;
+        }
+        .warning {
+            background-color: #fff3e0;
+            border-left: 5px solid #ffa726;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fehlerübersicht, Lösungsvorschläge und SQLite-Installation</h1>
+
+    <!-- SQLite Installation Section -->
+    <h2>SQLite-Installation auf Linux</h2>
+    <p>SQLite ist eine leichtgewichtige, serverlose Datenbank, die ideal für kleinere Projekte wie deine TODO-Liste ist. Befolge die folgenden Schritte, um SQLite unter Linux zu installieren:</p>
+
+    <h3>Schritt 1: Überprüfen, ob SQLite bereits installiert ist</h3>
+    <p>Führe den folgenden Befehl im Terminal aus, um zu überprüfen, ob SQLite auf deinem System installiert ist:</p>
+    <code>sqlite3 --version</code>
+    <p>Wenn SQLite installiert ist, wird die Version angezeigt. Wenn nicht, fahre mit dem nächsten Schritt fort.</p>
+
+    <h3>Schritt 2: Installation von SQLite</h3>
+    <p>Verwende den Paketmanager deines Linux-Systems, um SQLite zu installieren:</p>
+    <ul>
+        <li><strong>Ubuntu/Debian:</strong>
+            <code>sudo apt update && sudo apt install sqlite3</code>
+        </li>
+        <li><strong>Fedora:</strong>
+            <code>sudo dnf install sqlite</code>
+        </li>
+        <li><strong>Arch Linux:</strong>
+            <code>sudo pacman -S sqlite</code>
+        </li>
+    </ul>
+
+    <h3>Schritt 3: Installation des SQLite-PHP-Modules</h3>
+    <p>Um SQLite mit PHP zu verwenden, musst du das SQLite-PHP-Modul installieren:</p>
+    <ul>
+        <li><strong>Ubuntu/Debian:</strong>
+            <code>sudo apt install php-sqlite3</code>
+        </li>
+        <li><strong>Fedora:</strong>
+            <code>sudo dnf install php-sqlite3</code>
+        </li>
+    </ul>
+    <p>Anschließend kannst du den Apache-Server neu starten, damit die Änderungen wirksam werden:</p>
+    <code>sudo systemctl restart apache2</code>
+
+    <!-- Common Pitfalls Section -->
+    <h2>Häufige Fallstricke bei der Nutzung von SQLite</h2>
+
+    <div class="warning">
+        <h3>Fallstrick 1: Schreibrechte für die Datenbank</h3>
+        <p>Ein häufiger Fehler ist, dass die SQLite-Datenbank schreibgeschützt ist, was zu Fehlern wie <code>attempt to write a readonly database</code> führt.</p>
+        <h4>Lösungsvorschlag:</h4>
+        <ul>
+            <li>Überprüfe die Berechtigungen der Datenbankdatei und setze sie korrekt:
+                <code>chmod 775 /pfad/zu/todo.db</code>
+            </li>
+            <li>Stelle sicher, dass der Webserver (z. B. Apache) Schreibzugriff auf die Datenbankdatei hat:
+                <code>sudo chown www-data:www-data /pfad/zu/todo.db</code>
+            </li>
+        </ul>
+    </div>
+
+    <div class="warning">
+        <h3>Fallstrick 2: Datenbankdatei im falschen Verzeichnis</h3>
+        <p>Manchmal wird die Datenbankdatei in einem Verzeichnis abgelegt, auf das der Webserver keinen Zugriff hat.</p>
+        <h4>Lösungsvorschlag:</h4>
+        <ul>
+            <li>Lege die Datenbankdatei in einem Verzeichnis ab, auf das der Webserver zugreifen kann, wie z. B. <code>/srv/www/</code>.</li>
+            <li>Verwende absolute Pfade in deinem PHP-Code, um die Datei korrekt zu referenzieren.</li>
+        </ul>
+    </div>
+
+    <div class="warning">
+        <h3>Fallstrick 3: Datenbank-Sperren (Locking)</h3>
+        <p>SQLite sperrt die Datenbank, wenn mehrere Schreiboperationen gleichzeitig ausgeführt werden, was zu einer Fehlermeldung führen kann.</p>
+        <h4>Lösungsvorschlag:</h4>
+        <ul>
+            <li>Stelle sicher, dass deine Anwendung nicht versucht, mehrere gleichzeitige Schreibzugriffe auf die Datenbank zu initiieren.</li>
+            <li>Füge Fehlerbehandlung und Retry-Mechanismen hinzu, um mit vorübergehenden Sperren umzugehen.</li>
+        </ul>
+    </div>
+
+    <h2>Fehlerübersicht und Lösungsvorschläge</h2>
+
+    <!-- Your previous error sections here... -->
+</body>
+</html>
