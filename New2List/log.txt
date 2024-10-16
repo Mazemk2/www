@@ -103,3 +103,4 @@
 2024-10-16 18:42:09 - READ: [{"id":1,"task":"Eine Liste Erstellen","completed":1},{"id":2,"task":"F\u00fcge einen Punkt hinzu","completed":1},{"id":5,"task":"Markiere erledigte Objekte als Erledigt","completed":1},{"id":7,"task":"L\u00f6sche ein Objekt (2)","completed":1}]
 2024-10-16 18:42:23 - READ: [{"id":1,"task":"Eine Liste Erstellen","completed":1},{"id":2,"task":"F\u00fcge einen Punkt hinzu","completed":1},{"id":5,"task":"Markiere erledigte Objekte als Erledigt","completed":1},{"id":7,"task":"L\u00f6sche ein Objekt (2)","completed":1}]
 2024-10-16 18:42:29 - UPDATE: {"id":7,"completed":true}
+2024-10-16 18:49:18 - READ: [{"id":1,"task":"Eine Liste Erstellen","completed":1},{"id":2,"task":"F\u00fcge einen Punkt hinzu","completed":1},{"id":5,"task":"Markiere erledigte Objekte als Erledigt","completed":1},{"id":7,"task":"L\u00f6sche ein Objekt (2)","completed":0}]
