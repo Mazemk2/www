@@ -7,14 +7,18 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="view-source:https://letmegooglethat.com">Home</a>
+                <a class="nav-link active" aria-current="page" href="#">SQlite Issues</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Über</a>
+                <a class="nav-link" href="#"> </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Kontakt</a>
+                <a class="nav-link" href="#">Do you want to know more</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"> </a>
+            </li>
+
         </ul>
     </div>
 </nav>
