@@ -154,3 +154,7 @@
 2024-10-20 12:39:11 - READ: [{"id":1,"task":"Eine Liste Erstellen","completed":1},{"id":2,"task":"F\u00fcge einen Punkt hinzu","completed":1},{"id":5,"task":"Markiere erledigte Objekte als Erledigt","completed":1},{"id":7,"task":"L\u00f6sche ein Objekt (2)","completed":0}]
 2024-10-20 13:00:25 - READ: [{"id":1,"task":"Eine Liste Erstellen","completed":1},{"id":2,"task":"F\u00fcge einen Punkt hinzu","completed":1},{"id":5,"task":"Markiere erledigte Objekte als Erledigt","completed":1},{"id":7,"task":"L\u00f6sche ein Objekt (2)","completed":0}]
 2024-10-20 13:02:16 - READ: [{"id":1,"task":"Eine Liste Erstellen","completed":1},{"id":2,"task":"F\u00fcge einen Punkt hinzu","completed":1},{"id":5,"task":"Markiere erledigte Objekte als Erledigt","completed":1},{"id":7,"task":"L\u00f6sche ein Objekt (2)","completed":0}]
+2024-10-20 13:12:43 - CREATE: {"task":"fdg"}
+2024-10-20 13:12:43 - READ: [{"id":1,"task":"Eine Liste Erstellen","completed":1},{"id":2,"task":"F\u00fcge einen Punkt hinzu","completed":1},{"id":5,"task":"Markiere erledigte Objekte als Erledigt","completed":1},{"id":7,"task":"L\u00f6sche ein Objekt (2)","completed":0},{"id":10,"task":"fdg","completed":0}]
+2024-10-20 13:12:45 - UPDATE: {"id":10,"completed":true}
+2024-10-20 13:12:45 - DELETE: {"id":10,"completed":true}
