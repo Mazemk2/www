@@ -1,0 +1,7 @@
+body {
+    background-color: #faf5f0;
+}
+
+.completed {
+    text-decoration: line-through;
+}
