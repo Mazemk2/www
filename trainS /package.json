@@ -1,0 +1,17 @@
+{
+    "name": "halloweltserver",
+    "version": "0.0.1",
+    "description": "A little server that says hello world in german.",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "node index.js"
+    },
+    "keywords": [
+      "server",
+      "hello",
+      "world"
+    ],
+    "author": "Marco Scheidhuber",
+    "license": "MIT"
+  }

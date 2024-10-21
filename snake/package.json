@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "command-line-snake": "^1.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
