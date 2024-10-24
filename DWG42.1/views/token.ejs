@@ -1,0 +1,27 @@
+app.post('/login', async (req, res) => {
+    const { username, password } = req.body;
+    const conn = await pool.getConnection();
+    let user;
+ 
+    try {
+        user = await conn.query('SELECT * FROM users WHERE username = ?', [username]);
+    } catch (err) {
+        console.log(err);
+        return res.status(500).render('login', { title: 'Login', error: 'Fehler beim Login'});
+    } finally {
+      conn.release();
+    }
+ 
+    if (user && user.length === 0) {
+      return res.status(404).render('login', { title: 'Login', error: 'Benutzer nicht gefunden.' });
+    }
+ 
+    const isMatch = await bcrypt.compare(password, user[0].password_hash);
+    if (!isMatch) {
+      return res.status(403).render('login', { title: 'Login', error: 'Falsches Passwort'});
+    }
+    const token = jwt.sign({ username: user[0].username, name: user[0].name, email: user[0].email },
+                             secrets.jwt_secret_key,
+                             { expiresIn: '1h' });
+    res.cookie('token', token, { httpOnly: true }).redirect('/');
+});
