@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+</head>
+<body>
+    <h1><%= message %></h1>
+    <% if (user) { %>
+        <p>Willkommen, <%= user.name %>!</p>
+        <form action="/logout" method="POST">
+            <button type="submit">Logout</button>
+        </form>
+    <% } else { %>
+        <a href="/login">Login</a>
+        <a href="/register">Registrieren</a>
+    <% } %>
+</body>
+</html>
