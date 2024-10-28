@@ -3,6 +3,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 
 const lyricsRoutes = require('./lyrics.js');
+const musicDataRoutes = require('./musicData.js')
 
 const app = express();
 
@@ -22,6 +23,9 @@ app.get('/', (req, res) => {
 
 // Routen für Lyrics
 app.use('/lyrics', lyricsRoutes);
+
+//route for MusicData
+app.use('/musicData', musicDataRoutes);
 
 // Server starten
 app.listen(3000, () => {

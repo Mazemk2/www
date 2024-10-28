@@ -20,7 +20,8 @@ const lyricsData = {
     },
     'amnasiac': {
         title: 'I Might Be Wrong',  // Großschreibung korrigiert
-        lyrics: `I might be wrong
+        lyrics: `
+        I might be wrong
         I might be wrong
         I could have sworn I saw a light coming on
         I used to think
@@ -44,8 +45,46 @@ const lyricsData = {
         Keep it moving
         Ah, ah
         Ah` // Backticks für mehrzeilige Strings verwendet , Backticks remember it Backticks eine Idee verwende Amerikanisches Tastaturlayout
+    },
+    'hail_to_the_thief': {
+        title: 'There There',
+        lyrics:`
+        n pitch dark
+        I go walking in your landscape
+        Broken branches
+        Trip me as I speak
+        Just 'cause you feel it
+        Doesn't mean it's there
+        Just 'cause you feel it
+        Doesn't mean it's there
+        There's always a siren
+        Singing you to shipwreck
+        (Don't reach out, don't reach out
+        Don't reach out, don't reach out)
+        Steer away from these rocks
+        We'd be a walking disaster
+        (Don't reach out, don't reach out
+        Don't reach out, don't reach out)
+        Just 'cause you feel it
+        Doesn't mean it's there
+        (Someone on your shoulder
+        Someone on your shoulder)
+        Just 'cause you feel it
+        Doesn't mean it's there
+        (Someone on your shoulder
+        Someone on your shoulder)
+        There there!
+        Why so green and lonely?
+        Lonely, lonely?
+        Heaven sent you to me
+        To me, to me?
+        We are accidents waiting
+        Waiting to happen
+        We are accidents waiting
+        Waiting to happen`
     }
 };
+    
 
 // Route für die OK Computer Lyrics
 router.get('/ok_computer', (req, res) => {
@@ -59,7 +98,14 @@ router.get('/kid_a', (req, res) => {
 
 // Route für die I Might Be Wrong Lyrics
 router.get('/amnasiac', (req, res) => {
-    res.render('amnasiac', lyricsData['amnasiac']); // Diese Route hinzufügen
+    res.render('amnasiac', lyricsData['amnasiac'] ); // Diese Route hinzufügen
+   // res.render('hail_to_the_thief', lyricsData['hail_to_the_thief']);    
+
+});
+
+// Rout for Hail to the Thief
+router.get('/hail_to_the_thief', (req, res) =>{
+    res.render('hail_to_the_thief', lyricsData['hail_to_the_thief']);    
 });
 
 module.exports = router;

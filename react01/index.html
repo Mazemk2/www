@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profilkarten mit React</title>
+  <!-- React und ReactDOM laden -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+  <style>
+    /* Einfache CSS-Styling für Profilkarten */
+    .profile-card {
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin: 10px;
+      width: 200px;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+  <!-- Haupt-Div für React -->
+  <div id="app">Fallback-Inhalt, falls JavaScript nicht funktioniert.</div>
+
+  <!-- Dein JSX und React Code -->
+  <script type="text/javascript">
+    const { createRoot } = ReactDOM;
+
+    // JSX-Komponenten für ein Profil
+    const ProfileCard = ({ name, description, skills }) => (
+      <div className="profile-card">
+        <h2>{name}</h2>
+        <p>{description}</p>
+        <ul>
+          {skills.map(skill => <li key={skill}>{skill}</li>)}
+        </ul>
+      </div>
+    );
+
+    // Mehrere Profile rendern
+    const App = () => (
+      <div>
+        <ProfileCard 
+          name="Jane Doe" 
+          description="Web Developer aus Berlin" 
+          skills={["JavaScript", "React", "CSS"]} 
+        />
+        <ProfileCard 
+          name="John Smith" 
+          description="UI/UX Designer aus München" 
+          skills={["Sketch", "Figma", "Photoshop"]} 
+        />
+        <ProfileCard 
+          name="Sarah Müller" 
+          description="Backend-Entwicklerin aus Hamburg" 
+          skills={["Node.js", "Express", "MongoDB"]} 
+        />
+      </div>
+    );
+
+    // React-Root erstellen und JSX rendern
+    const rootElement = document.getElementById("app");
+    const root = createRoot(rootElement);
+    root.render(<App />);
+  </script>
+</body>
+</html>
