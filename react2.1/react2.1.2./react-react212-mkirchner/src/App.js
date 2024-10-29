@@ -1,7 +1,8 @@
+import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function Header(){
+function header(){
     return <header>
       <h1>Headline</h1>
     </header>
@@ -9,7 +10,9 @@ function Header(){
 
 function App() {
   return (
+    
     <div className="App">
+      
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
