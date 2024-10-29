@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSX Beispielseite mit Fallback</title>
+  <!-- React und ReactDOM laden -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <!-- Babel für die JSX-Umwandlung -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+    /* Einfache CSS-Styling für Seiteninhalt */
+    body {
+      font-family: Arial, sans-serif;
+    }
+    footer {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 0.9em;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <!-- Haupt-Div für React -->
+  <div id="app"></div>
+
+  <!-- Einbindung der JSX-Datei -->
+  <script type="text/babel" src="app.js"></script>
+</body>
+</html>
