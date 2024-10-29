@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profilkarten mit React (Ohne JSX)</title>
+  <!-- React und ReactDOM laden -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+  <style>
+    /* Einfaches CSS-Styling für Profilkarten */
+    .profile-card {
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin: 10px;
+      width: 450px;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      background-color: #f8dede;
+    }
+  </style>
+</head>
+<body>
+  <!-- Haupt-Div für React -->
+  <div id="app">Fallback-Inhalt, falls JavaScript nicht funktioniert.</div>
+
+  <!-- JavaScript für die React-Komponenten -->
+  <script type="text/javascript">
+    const { createRoot } = ReactDOM;
+
+    // ProfileCard-Komponente als JavaScript-Objekt ohne JSX
+    function ProfileCard(props) {
+      return React.createElement(
+        'div', 
+        { className: 'profile-card' }, 
+        React.createElement('h2', null, props.name),
+        React.createElement('p', null, props.description),
+        React.createElement(
+          'ul',
+          null,
+          props.skills.map(skill => React.createElement('li', { key: skill }, skill))
+        )
+      );
+    }
+
+    // Haupt-App-Komponente, die mehrere Profile enthält
+    function App() {
+      return React.createElement(
+        'div', 
+        null,
+        React.createElement(ProfileCard, {
+          name: "Jane Doe",
+          description: "Web Developer aus Berlin",
+          skills: ["JavaScript", "React", "CSS"]
+        }),
+        React.createElement(ProfileCard, {
+          name: "John Smith",
+          description: "UI/UX Designer aus München",
+          skills: ["Sketch", "Figma", "Photoshop"]
+        }),
+        React.createElement(ProfileCard, {
+          name: "Sarah Müller",
+          description: "Backend-Entwicklerin aus Hamburg",
+          skills: ["Node.js", "Express", "MongoDB"]
+        }),
+        React.createElement(ProfileCard, {
+          name: "Mattias Kirchner",
+          description: "Backend-Entwicklerin aus Hamburg",
+          skills: ["Adobe After Effects", "Nothing more", "but he's good at it"]
+        })
+      
+    )}
+
+    // React-Root erstellen und App-Komponente rendern
+    document.addEventListener("DOMContentLoaded", function () {
+      try {
+        const rootElement = document.getElementById("app");
+        const root = createRoot(rootElement);
+        root.render(React.createElement(App));
+      } catch (error) {
+        console.error("Fehler beim Rendern der App:", error);
+      }
+    });
+  </script>
+</body>
+</html>

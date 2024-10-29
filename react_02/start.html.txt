@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSX Beispielseite mit Fallback</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    footer {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 0.9em;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <!-- Haupt-Div für React mit Fallback-Inhalt -->
+  <div id="app">
+    <h1>Fallback-Inhalt, falls JavaScript nicht funktioniert.</h1>
+    <p>Diese Seite benötigt JavaScript, um den React-Inhalt anzuzeigen.</p>
+  </div>
+
+  <!-- Haupt-JavaScript-Datei -->
+  <script type="module" src="./index.js"></script>
+</body>
+</html>
