@@ -1,17 +1,15 @@
 // src/LikeButton.js
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import { ClickContext } from './ClickContext';
 
 function LikeButton() {
-  const [count, setCount] = useState(0);
-
-  const handleLike = () => {
-    setCount(count + 1);
-  };
+  // Zugriff auf den globalen Like-Zähler und die Erhöhungsfunktion
+  const { likeCount, incrementLikeCount } = useContext(ClickContext);
 
   return (
     <div>
-      <button onClick={handleLike}>Like</button>
-      <p>Likes: {count}</p>
+      <button onClick={incrementLikeCount}>Like {likeCount}mm</button>
+      <p><h6> Likes: {likeCount}</h6></p>
     </div>
   );
 }
